@@ -1,0 +1,61 @@
+.course-management {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .course-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .course-form input {
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .course-form button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .course-form button:hover {
+    background-color: #218838;
+  }
+  
+  .course-list {
+    text-align: left;
+  }
+  
+  .course-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    position: relative;
+  }
+  
+  .course-item button {
+    margin-right: 10px;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .course-item button:first-of-type {
+    background-color: #007bff;
+    color: white;
+    border: none;
+  }
+  
+  .course-item button:last-of-type {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+  }
+  
