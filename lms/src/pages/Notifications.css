@@ -1,0 +1,29 @@
+.notifications-page {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+  }
+  .notifications-page ul {
+    list-style: none;
+    padding: 0;
+  }
+  .notifications-page li {
+    background: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .unread {
+    background: #f8d7da;
+  }
+  button {
+    padding: 5px 10px;
+    background: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  

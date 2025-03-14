@@ -11,3 +11,79 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.home-container {
+  text-align: center;
+  padding: 50px;
+  background-color: #f8f9fa;
+  height: 100vh;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #343a40;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #6c757d;
+}
+
+.home-buttons {
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 12px 20px;
+  margin: 10px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #28a745;
+  color: white;
+}
+.dashboard-container {
+  text-align: center;
+  padding: 50px;
+  background-color: #fff;
+  height: 100vh;
+}
+
+header h2 {
+  font-size: 2.5rem;
+  color: #343a40;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #6c757d;
+}
+
+.dashboard-buttons {
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 12px 20px;
+  margin: 10px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  color: black;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
