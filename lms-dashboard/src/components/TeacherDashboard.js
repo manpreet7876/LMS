@@ -13,6 +13,7 @@ const Notifications = () => <h2 className="text-center mt-5">Notifications Page<
 // Teacher Dashboard Component
 const TeacherDashboard = () => {
   const [courses, setCourses] = useState([]);
+  const [selectedFiles, setSelectedFiles] = useState([]);
 
   // Load courses from localStorage
   useEffect(() => {
@@ -20,7 +21,7 @@ const TeacherDashboard = () => {
     setCourses(savedCourses);
   }, []);
 
-  // Add a new course
+  // Add a new course with file upload
   const addCourse = () => {
     const courseName = prompt("Enter course name:");
     if (!courseName) return;
@@ -29,11 +30,19 @@ const TeacherDashboard = () => {
       id: courses.length + 1,
       name: courseName,
       studentsEnrolled: 0,
+      documents: selectedFiles,
     };
 
     const updatedCourses = [...courses, newCourse];
     setCourses(updatedCourses);
     localStorage.setItem("courses", JSON.stringify(updatedCourses));
+    setSelectedFiles([]); // Clear selected files after adding a course
+  };
+
+  // Handle file selection
+  const handleFileChange = (event) => {
+    const files = Array.from(event.target.files);
+    setSelectedFiles(files.map((file) => file.name));
   };
 
   // Delete a course
@@ -66,10 +75,13 @@ const TeacherDashboard = () => {
         <Link to="/notifications" className="btn btn-danger">Notifications</Link>
       </div>
 
-      {/* Add Course Button */}
-      <button className="btn btn-primary mb-3" onClick={addCourse}>
-        + Add Course
-      </button>
+      {/* Add Course Button and File Upload */}
+      <div className="mb-3">
+        <input type="file" multiple onChange={handleFileChange} className="form-control mb-2" />
+        <button className="btn btn-primary" onClick={addCourse}>
+          + Add Course
+        </button>
+      </div>
 
       {/* Course Table */}
       <div className="table-responsive">
@@ -79,6 +91,7 @@ const TeacherDashboard = () => {
               <th>#</th>
               <th>Course Name</th>
               <th>Students Enrolled</th>
+              <th>Documents</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -89,6 +102,17 @@ const TeacherDashboard = () => {
                   <td>{course.id}</td>
                   <td>{course.name}</td>
                   <td>{course.studentsEnrolled}</td>
+                  <td>
+                    {course.documents && course.documents.length > 0 ? (
+                      <ul>
+                        {course.documents.map((doc, idx) => (
+                          <li key={idx}>{doc}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      "No documents uploaded"
+                    )}
+                  </td>
                   <td>
                     <button
                       className="btn btn-info btn-sm me-2"
@@ -108,7 +132,7 @@ const TeacherDashboard = () => {
               ))
             ) : (
               <tr>
-                <td colSpan="4" className="text-center">
+                <td colSpan="5" className="text-center">
                   No courses available
                 </td>
               </tr>
@@ -121,4 +145,3 @@ const TeacherDashboard = () => {
 };
 
 export default TeacherDashboard;
-

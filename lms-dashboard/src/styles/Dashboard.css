@@ -1,0 +1,92 @@
+/* General Styles */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Dashboard Title */
+h2 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Button Group Styling */
+.d-flex .btn {
+    width: 150px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* Active Button Styles */
+.btn-primary.active, 
+.btn-success.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
+
+/* Button Hover Effect */
+.btn-primary:hover,
+.btn-success:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Table Styling */
+.table {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.table th {
+    background-color: #007bff;
+    color: white;
+    text-transform: uppercase;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+/* Modal Styling */
+.modal-title {
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+/* Upload Assignment Button */
+.btn-info {
+    background-color: #17a2b8;
+    border: none;
+}
+
+.btn-info:hover {
+    background-color: #138496;
+}
+
+/* Rate Course Button */
+.btn-warning {
+    background-color: #ffc107;
+    border: none;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+}
+
+/* View Course Button */
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
