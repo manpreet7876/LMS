@@ -1,21 +1,21 @@
-import { Lesson } from "../../../src/models/LessonModel";
+import { Lesson } from "../../models/LessonModel";
+import { LocalStorageHelper } from "../../../src/utils/localStorageHelper";
 
 const LOCAL_STORAGE_KEY = "lessons";
 
 export const LessonService = {
   getLessons: (): Lesson[] => {
-    const data = localStorage.getItem(LOCAL_STORAGE_KEY);
-    return data ? JSON.parse(data) : [];
+    return LocalStorageHelper.getItem(LOCAL_STORAGE_KEY) || [];
   },
 
   addLesson: (newLesson: Lesson): void => {
     const lessons = LessonService.getLessons();
     lessons.push(newLesson);
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(lessons));
+    LocalStorageHelper.setItem(LOCAL_STORAGE_KEY, lessons);
   },
 
   deleteLesson: (id: string): void => {
-    const lessons = LessonService.getLessons().filter(lesson => lesson.id !== id);
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(lessons));
-  },
+    const updatedLessons = LessonService.getLessons().filter(lesson => lesson.id !== id);
+    LocalStorageHelper.setItem(LOCAL_STORAGE_KEY, updatedLessons);
+  }
 };

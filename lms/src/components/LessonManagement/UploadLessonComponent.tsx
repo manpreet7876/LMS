@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { LessonService } from "../LessonManagement/LessonService";
-import { Lesson } from "../../../src/models/LessonModel";
+import { LessonService } from "./LessonService";
+import { Lesson } from "../../models/LessonModel";
 
 const UploadLessonComponent: React.FC = () => {
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
+  const [title, setTitle] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
   const [file, setFile] = useState<File | null>(null);
 
   const handleUpload = () => {
@@ -21,7 +21,7 @@ const UploadLessonComponent: React.FC = () => {
 
     LessonService.addLesson(newLesson);
     alert("Lesson uploaded successfully!");
-    window.location.reload(); // To refresh the list
+    window.location.reload(); // Refresh lesson list
   };
 
   return (
@@ -30,7 +30,7 @@ const UploadLessonComponent: React.FC = () => {
       <input type="text" placeholder="Title" onChange={(e) => setTitle(e.target.value)} />
       <textarea placeholder="Description" onChange={(e) => setDescription(e.target.value)} />
       <input type="file" onChange={(e) => setFile(e.target.files?.[0] || null)} />
-      <button onClick={handleUpload}>Upload</button>
+      <button onClick={handleUpload}>Upload Lesson</button>
     </div>
   );
 };
