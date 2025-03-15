@@ -40,3 +40,19 @@
 .read-the-docs {
   color: #888;
 }
+.app-container {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background: #007bff;
+  color: white;
+  padding: 15px;
+}
+
+main {
+  margin-top: 30px;
+}
