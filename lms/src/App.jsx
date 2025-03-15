@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import Notifications from "./components/Notifications";
 import "./App.css";
@@ -16,5 +17,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
